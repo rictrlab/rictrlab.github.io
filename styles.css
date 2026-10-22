@@ -1,0 +1,26 @@
+/* rictrlab — the edge orbit piece, centred, sized to fit any screen */
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body {
+  --pad: clamp(0.75rem, 3vw, 3rem);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #04060c;
+  display: flex;
+  padding: var(--pad);
+  padding-top: max(var(--pad), env(safe-area-inset-top));
+  padding-bottom: max(var(--pad), env(safe-area-inset-bottom));
+}
+ascii-art {
+  display: block;
+  width: 100%;
+  /* capped by width and by height, so a short landscape phone still shows the whole piece */
+  max-width: min(1100px, 100%, calc((100vh - 2 * var(--pad)) * 2));
+  max-width: min(1100px, 100%, calc((100dvh - 2 * var(--pad)) * 2));
+  margin: auto;                 /* centred in both axes */
+  border: 1px solid #16203a;
+  border-radius: 4px;
+  background: #04060c;
+  overflow: hidden;
+}
